@@ -1,0 +1,83 @@
+kind: pipeline
+name: default
+
+steps:
+- name: postgres
+  image: plugins/docker
+  settings:
+    context: postgres
+    dockerfile: postgres/Dockerfile
+    repo: http://green.wadza.fr:5000/postgres
+    tags: latest
+
+- name: postgres-alpine
+  image: plugins/docker
+  settings:
+    context: postgres
+    dockerfile: postgres/Dockerfile.alpine
+    repo: http://green.wadza.fr:5000/postgres
+    tags: alpine
+
+- name: postgres-9-alpine
+  image: plugins/docker
+  settings:
+    context: postgres
+    dockerfile: postgres/Dockerfile.9.alpine
+    repo: http://green.wadza.fr:5000/postgres
+    tags: 9-alpine
+
+- name: mariadb
+  image: plugins/docker
+  settings:
+    context: mariadb
+    dockerfile: mariadb/DockerFile
+    repo: http://green.wadza.fr:5000/mariadb
+    tags: latest
+
+- name: registry-2
+  image: plugins/docker
+  settings:
+    context: registry
+    dockerfile: registry/Dockerfile.2
+    repo: http://green.wadza.fr:5000/registry
+    tags: 2
+
+- name: drone-1
+  image: plugins/docker
+  settings:
+    context: drone
+    dockerfile: drone/Dockerfile.1
+    repo: http://green.wadza.fr:5000/drone
+    tags: 1
+
+- name: drone-runner-docker-1
+  image: plugins/docker
+  settings:
+    context: drone
+    dockerfile: drone/Dockerfile.runner.docker.1
+    repo: http://green.wadza.fr:5000/drone-runner-docker
+    tags: 1
+
+- name: bind
+  image: plugins/docker
+  settings:
+    context: bind
+    dockerfile: bind/Dockerfile
+    repo: http://green.wadza.fr:5000/bind
+    tags: latest
+
+- name: amule
+  image: plugins/docker
+  settings:
+    context: amule
+    dockerfile: amule/Dockerfile
+    repo: http://green.wadza.fr:5000/amule
+    tags: latest
+
+- name: nextcloud
+  image: plugins/docker
+  settings:
+    context: nextcloud
+    dockerfile: nextcloud/Dockerfile
+    repo: http://green.wadza.fr:5000/nextcloud
+    tags: latest
