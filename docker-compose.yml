@@ -1,0 +1,59 @@
+version: '2'
+
+services:
+  postgres:
+    image: local/postgres
+    build:
+      context: postgres
+  postgres-alpine:
+    image: local/postgres:alpine
+    build:
+      context: postgres
+      dockerfile: Dockerfile.alpine
+  postgres-9-alpine:
+    image: local/postgres:9-alpine
+    build:
+      context: postgres
+      dockerfile: Dockerfile.9.alpine
+
+  mariadb:
+    image: local/mariadb
+    build:
+      context: mariadb
+
+  registry-2:
+    image: local/registry:2
+    build:
+      context: registry
+      dockerfile: Dockerfile.2
+
+  drone-1:
+    image: local/drone:1
+    build:
+      context: drone
+      dockerfile: Dockerfile.1
+  drone-runner-docker-1:
+    image: local/drone-runner-docker:1
+    build:
+      context: drone
+      dockerfile: Dockerfile.runner.docker.1
+
+  bind:
+    image: local/bind
+    build:
+      context: bind
+
+  amule:
+    image: local/amule
+    build:
+      context: amule
+
+  nextcloud:
+    image: local/nextcloud
+    build:
+      context: nextcloud
+
+  gotify:
+    image: local/gotify
+    build:
+      context: gotify
