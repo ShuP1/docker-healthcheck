@@ -89,3 +89,11 @@ steps:
     dockerfile: gotify/Dockerfile
     repo: green.wadza.fr:5000/gotify
     tags: latest
+
+- name: liman
+  image: plugins/docker
+  settings:
+    context: liman
+    dockerfile: liman/Dockerfile
+    repo: green.wadza.fr:5000/liman
+    tags: latest
