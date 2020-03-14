@@ -5,4 +5,4 @@ RUN set -ex \
 
 # TODO: use /debug/health
 HEALTHCHECK --interval=5m --timeout=3s \
-    CMD curl -f $(hostname -i || echo '127.0.0.1')/v2/ || exit 1
+    CMD curl -s -f $(hostname -i || echo '127.0.0.1')/v2/ || exit 1
