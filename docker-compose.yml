@@ -58,7 +58,7 @@ services:
     build:
       context: gotify
 
-  liman:
-    image: local/liman
+  dst:
+    image: local/dst
     build:
-      context: liman
+      context: dst
