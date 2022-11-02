@@ -53,12 +53,28 @@ services:
     build:
       context: nextcloud
 
-  gotify:
-    image: local/gotify
-    build:
-      context: gotify
+# gotify:
+#   image: local/gotify
+#   build:
+#   context: gotify
 
   dst:
     image: local/dst
     build:
       context: dst
+
+  metry:
+    image: local/metry
+    build:
+      context: metry
+
+#  scalliony-allium:
+#    image: local/scalliony-allium
+#    build:
+#      context: scalliony
+#      dockerfile: Dockerfile.allium
+#  scalliony-chives:
+#    image: local/scalliony-chives
+#    build:
+#      context: scalliony
+#      dockerfile: Dockerfile.chives
